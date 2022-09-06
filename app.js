@@ -1,18 +1,20 @@
 $(function () {
-   // this block of code gets the user's input on click
+   //this block of code gets the user's input on click
 
-
+   let map
    const firstLoad = () => {
-      var map = L.map('map').setView([43.161030, -77.610924], 13);
+        initialMap = L.map('map').setView([43.161030, -77.610924], 13);
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
          maxZoom: 19,
          attribution: '© OpenStreetMap'
-      }).addTo(map);
+      }).addTo(initialMap);
+
+      
    };
 
    firstLoad();
-
+  
    const geoLocation = async () => {
       var theData, response;
 
@@ -23,7 +25,7 @@ $(function () {
          swal(
             {
                title: "Error",
-               text: "Kindly input a correct domain or ip address",
+               text: "Check your internet connection",
                icon: 'error',
                button: 'Retry'
             }
@@ -31,10 +33,8 @@ $(function () {
       } else {
          theData = await response.json();
 
-
-
       }
-     
+      console.log(theData);
       return theData;
    };
 
@@ -44,15 +44,16 @@ $(function () {
       yourIp = $('.yourIp').val();
 
 
-      // geoLocation();
-
-      geoLocation().then(data => {
+         geoLocation().then(data => {
          $(".address").text(data.ip);
          $(".location").text(data.location.region);
          $(".timezone").text(`UTC ${data.location.timezone}`);
          $(".isp").text(data.isp);
 
-         var map = L.map('map').setView([data.location.lat, data.location.lng], 13);
+         initialMap.off()
+         var container = L.DomUtil.get('map'); if(container != null){ container._leaflet_id = null; }
+
+         let map = L.map('map').setView([data.location.lat, data.location.lng], 13);
          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© OpenStreetMap'
@@ -65,19 +66,20 @@ $(function () {
          });
          L.marker([data.location.lat, data.location.lng], {icon: greenIcon}).addTo(map); //this add a marker to your exact location
 
+         
+
 
       }).catch((err) => {
-//          swal(
-//             {
-//                title: "Error",
-//                text: "Kindly input a correct domain or ip address",
-//                icon: 'error',
-//                button: 'Retry'
-//             }
-//         
-//         );
+         swal(
+            {
+               title: "Error",
+               text: "Kindly input a correct domain or ip address",
+               icon: 'error',
+               button: 'Retry'
+            }
+         );
+            
 
-            alert(err)
       });
 
 
