@@ -74,10 +74,10 @@ $(function () {
 //                icon: 'error',
 //                button: 'Retry'
 //             }
-         alert(err)
-         );
+//         
+//         );
 
-
+            alert(err)
       });
 
 
