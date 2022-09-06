@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<link rel="stylesheet" href="style.css" />
+
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+			integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+			crossorigin=""
+		/>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script
+			src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+			integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+			crossorigin=""
+		></script>
+		<script src="/JAVASCRIPT/jquery-3.6.0.js"></script>
+		<script defer src="app.js"></script>
+
+		<title>Frontend Mentor | IP Address Tracker</title>
+
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+	</head>
+	<body>
+		<div class="container">
+			<div class="head">
+				<h3>IP Address Tracker</h3>
+
+				<div class="user-input">
+					<input
+						type="text"
+						placeholder="Search for any IP address or domain"
+						class="yourIp"
+					/>
+					<button class="button">
+						<img class="btn" src="./images/icon-arrow.svg" alt="" />
+					</button>
+				</div>
+
+				<div class="result-tab">
+					<div class="search-result one">
+						<p>IP Address</p>
+						<h2 class="address">109.205.124.227</h2>
+					</div>
+					<div class="search-result two">
+						<p>Location</p>
+						<h2 class="location">New York</h2>
+					</div>
+					<div class="search-result three">
+						<p>Timezone</p>
+						<h2 class="timezone">UTC -5</h2>
+					</div>
+					<div class="search-result fourth">
+						<p>ISP</p>
+						<h2 class="isp">SpaceX StarLink</h2>
+					</div>
+				</div>
+			</div>
+
+			<div id="map">
+				<div class="fa-3x">
+					<i class="fas fa-spinner fa-pulse"></i>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

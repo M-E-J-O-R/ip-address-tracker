@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --vDarkGray: hsl(0, 0%, 17%);
+  --darkGray: hsl(0, 0%, 59%);
+}
+
+.container {
+  width: 100vw;
+  max-width: 100vw;
+}
+
+.head {
+  background-image: url(./images/pattern-bg.png);
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 1rem;
+  align-items: center;
+}
+.head > h3 {
+  color: white;
+  transform: translateY(50%);
+}
+
+.user-input {
+  display: flex;
+  width: 22rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  transform: translateY(50%);
+}
+.user-input input {
+  border: none;
+  padding: 0.5rem 1rem;
+  color: var(--darkGray);
+  width: 91%;
+  outline: none;
+  border-radius: 0.5rem;
+}
+.user-input .button {
+  width: 9%;
+  padding: 1rem;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.user-input .button .btn {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 auto;
+}
+
+.result-tab {
+  width: 80%;
+  min-height: 8rem;
+  padding: 1rem;
+  display: grid;
+  position: relative;
+  z-index: 2;
+  border-radius: 1rem;
+  background-color: white;
+  grid-template-columns: repeat(4, 25%);
+  margin-top: -1rem;
+  transform: translateY(50%);
+}
+
+.search-result {
+  padding: 1rem;
+}
+.search-result p {
+  margin-bottom: 0.25rem;
+  color: var(--darkGray);
+}
+.search-result p,
+.search-result h2 {
+  text-align: center;
+}
+.search-result h2 {
+  font-size: 24px;
+  word-wrap: break-word;
+}
+
+.one,
+.two,
+.three {
+  border-right: 1px solid var(--darkGray);
+}
+
+#map {
+  max-width: 100vw;
+  min-width: 99vw;
+  height: 700px;
+  position: relative;
+  z-index: 1;
+  background-color: gray;
+}
+
+.fa-3x {
+  display: none;
+  display: block;
+  margin: 0 auto;
+}
+.fa-3x i {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 100vw;
+  }
+  .container .head {
+    width: 100%;
+  }
+  .container .user-input {
+    width: 90%;
+    margin: 0.5rem 0;
+    transform: translateY(50%);
+  }
+  .container .user-input input {
+    width: 87%;
+  }
+  .container .user-input .button {
+    width: 13%;
+  }
+  .result-tab {
+    min-width: 90vw;
+    grid-template-columns: 100%;
+    margin-top: -6rem;
+  }
+  .search-result {
+    border: none;
+  }
+}/*# sourceMappingURL=style.css.map */
