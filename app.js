@@ -34,7 +34,7 @@ $(function () {
 
 
       }
-      console.log(theData);
+     
       return theData;
    };
 
@@ -67,13 +67,14 @@ $(function () {
 
 
       }).catch((err) => {
-         swal(
-            {
-               title: "Error",
-               text: "Kindly input a correct domain or ip address",
-               icon: 'error',
-               button: 'Retry'
-            }
+//          swal(
+//             {
+//                title: "Error",
+//                text: "Kindly input a correct domain or ip address",
+//                icon: 'error',
+//                button: 'Retry'
+//             }
+         alert(err)
          );
 
 
