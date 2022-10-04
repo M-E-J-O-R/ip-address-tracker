@@ -17,8 +17,10 @@ $(function () {
   
    const geoLocation = async () => {
       var theData, response;
+      
+      response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_oNQzQGUCVFpRzh0WPQyW6vIHZ9sSh&ipAddress=${yourIp}`);
 
-      response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_6v40Dbqsdrncaw3Hab0Fqoh1HPmLK&ipAddress=${yourIp}`);
+      //response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_6v40Dbqsdrncaw3Hab0Fqoh1HPmLK&ipAddress=${yourIp}`);
 
       // this block of code test if the we can connect to the server and alert an error message if we can't
       if (!response.ok) {
