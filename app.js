@@ -36,8 +36,7 @@ $(function () {
          theData = await response.json();
 
       }
-      console.log(theData);
-      return theData;
+       return theData;
    };
 
 
